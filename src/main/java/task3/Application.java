@@ -187,7 +187,11 @@ class AbstractFabricService extends Configuration {
             case (MOB):
                 factory = new MobFormElementFactory();
             default:
-                throw new Exeption("Не известный тип платформы");
+                try {
+                    throw new Exception("Не известный тип платформы");
+                }catch (Exception e){
+                    throw new RuntimeException(e);
+                }
         }
 
         return factory;
