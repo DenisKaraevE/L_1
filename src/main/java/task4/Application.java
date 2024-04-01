@@ -185,12 +185,22 @@ class CarBuilder {
 }
 
 class BuilderService {
-
     public void exec() {
         CarBuilder builder = new CarBuilder();
         builder.setCarType(CarType.SPORTS_CAR);
         builder.setSeats(2);
         builder.setEngine(new Engine(3.0, 0));
+        builder.setTransmission(Transmission.SEMI_AUTOMATIC);
+        builder.setTripComputer(new TripComputer());
+        builder.setGPSNavigator(new GPSNavigator());
+        Car car = builder.getResult();
+        System.out.println("Car built:\n" + car.getCarType());
+    }
+    public void exec_1(){
+        CarBuilder builder = new CarBuilder();
+        builder.setCarType(CarType.SPORTS_CAR);
+        builder.setSeats(4);
+        builder.setEngine(new Engine(5.0, 0));
         builder.setTransmission(Transmission.SEMI_AUTOMATIC);
         builder.setTripComputer(new TripComputer());
         builder.setGPSNavigator(new GPSNavigator());
@@ -203,5 +213,6 @@ class Application{
     public static void main(String[] args) {
         BuilderService builderService = new BuilderService();
         builderService.exec();
+        builderService.exec_1();
     }
 }
