@@ -175,13 +175,13 @@ class Configuration {
     }
 }
 
-class AbstractFabricService {
+class AbstractFabricService extends Configuration {
 
     private FormElementFactory initFactory() {
         Configuration configuration = Configuration.initWeb();
 
         FormElementFactory factory;
-        switch(conf.getPlatform()) {
+        switch(configuration.getPlaform()) {
             case (WEB):
                 factory = new WebFormElementFactory();
             case (MOB):
