@@ -28,12 +28,12 @@ abstract class AbstractDialog implements Dialog {
 
 }
 class WebDialog extends AbstractDialog {
-    private Button getButton() {
+    public Button getButton() {
         return new WebButton();
     }
 }
 class MobDialog extends AbstractDialog {
-    private Button getButton() {
+    public Button getButton() {
         return new MobButton();
     }
 }
@@ -65,13 +65,13 @@ class Configuration {
 }
 
 
-class FabricMethodService {
+class FabricMethodService extends Configuration{
 
     public void exec() {
         Configuration configuration = Configuration.initWeb();
 
         Dialog dialog;
-        switch(conf.getPlatform()) {
+        switch(configuration.getPlatform()) {
             case (WEB):
                 dialog = new WebDialog();
             case (MOB):
