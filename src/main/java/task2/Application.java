@@ -11,15 +11,15 @@ class WebButton implements Button {
         System.out.println("render WebButton");
     }
 }
-class MobButton implement Button {
+class MobButton implements Button {
     public void render() {
         System.out.println("render MobButton");
     }
 }
-abstarct class AbstractDialog implements Dialog {
+abstract class AbstractDialog implements Dialog {
 
     // Фабричный метод
-    abstarct Button getButton();
+    abstract Button getButton();
 
     public void render() {
         Button button = getButton();
