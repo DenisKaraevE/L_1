@@ -60,7 +60,7 @@ class GPSNavigator {
         return route;
     }
 }
-public enum Transmission {
+enum Transmission {
     SINGLE_SPEED, MANUAL, AUTOMATIC, SEMI_AUTOMATIC
 }
 class TripComputer {
