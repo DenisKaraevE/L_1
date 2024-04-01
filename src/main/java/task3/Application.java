@@ -120,6 +120,7 @@ class MobInput implements Input {
 
     public Input value(String value) {
         this.value = value;
+        return this;
     }
 
     public String value() {
