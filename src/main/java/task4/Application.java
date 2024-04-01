@@ -143,6 +143,19 @@ class Car {
     public GPSNavigator getGpsNavigator() {
         return gpsNavigator;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carType=" + carType +
+                ", seats=" + seats +
+                ", engine=" + engine +
+                ", transmission=" + transmission +
+                ", tripComputer=" + tripComputer +
+                ", gpsNavigator=" + gpsNavigator +
+                ", fuel=" + fuel +
+                '}';
+    }
 }
 class CarBuilder {
 
