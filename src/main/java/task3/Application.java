@@ -181,21 +181,23 @@ class AbstractFabricService extends Configuration {
         Configuration configuration = Configuration.initWeb();
 
         FormElementFactory factory;
-        switch(configuration.getPlaform()) {
+        switch (configuration.getPlaform()) {
             case (WEB):
                 factory = new WebFormElementFactory();
+                break;
             case (MOB):
                 factory = new MobFormElementFactory();
+                break;
             default:
                 try {
-                    throw new Exception("Не известный тип платформы");
-                }catch (Exception e){
+                    throw new Exception("Неизвестный тип платформы");
+                } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
         }
-
         return factory;
     }
+
 
     private void renderForm(FormElementFactory factory) {
         Input input = factory.createInput();
