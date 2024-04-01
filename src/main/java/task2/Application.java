@@ -11,7 +11,7 @@ class WebButton implements Button {
         System.out.println("render WebButton");
     }
 }
-class MobButton implement button {
+class MobButton implement Button {
     public void render() {
         System.out.println("render MobButton");
     }
