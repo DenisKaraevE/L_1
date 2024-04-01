@@ -207,7 +207,7 @@ class BuilderService {
         builder.setTripComputer(new TripComputer());
         builder.setGPSNavigator(new GPSNavigator());
         Car car = builder.getResult();
-        System.out.println("Car built:\n" + car.getCarType());
+        System.out.println(car.toString());
     }
     public void exec_1(){
         CarBuilder builder = new CarBuilder();
@@ -218,7 +218,18 @@ class BuilderService {
         builder.setTripComputer(new TripComputer());
         builder.setGPSNavigator(new GPSNavigator());
         Car car = builder.getResult();
-        System.out.println("Car built:\n" + car.getCarType());
+        System.out.println(car.toString());
+    }
+    public void exec_2(){
+        CarBuilder builder = new CarBuilder();
+        builder.setCarType(CarType.CITY_CAR);
+        builder.setSeats(7);
+        builder.setEngine(new Engine(2.0, 100));
+        builder.setTransmission(Transmission.MANUAL);
+        builder.setTripComputer(new TripComputer());
+        builder.setGPSNavigator(new GPSNavigator());
+        Car car = builder.getResult();
+        System.out.println(car.toString());
     }
 }
 
@@ -227,5 +238,6 @@ class Application{
         BuilderService builderService = new BuilderService();
         builderService.exec();
         builderService.exec_1();
+        builderService.exec_2();
     }
 }
