@@ -69,17 +69,20 @@ class FabricMethodService extends Configuration{
 
     public void exec() {
         Configuration configuration = Configuration.initWeb();
-
+        //Configuration configuration = Configuration.initMob();
         Dialog dialog;
-        switch(configuration.getPlatform()) {
+        switch(configuration.getPlaform()) {
             case (WEB):
                 dialog = new WebDialog();
             case (MOB):
                 dialog = new MobDialog();
             default:
-                throw new Exeption("Не известный тип платформы");
+                try {
+                    throw new Exception("Неизвестный тип платформы");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
         }
-
         dialog.render();
     }
 
