@@ -150,8 +150,8 @@ class MobFormElementFactory implements FormElementFactory {
 
 class Configuration {
 
-    public final static String int WEB = 1;
-    public final static String int MOB = 2;
+    public final static int WEB = 1;
+    public final static int MOB = 2;
 
     private int platform;
 
