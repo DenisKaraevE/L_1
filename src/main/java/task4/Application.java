@@ -200,4 +200,9 @@ class BuilderService {
     }
 }
 
-
+class Application{
+    public static void main(String[] args) {
+        BuilderService builderService = new BuilderService();
+        builderService.exec();
+    }
+}
